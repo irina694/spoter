@@ -26,8 +26,8 @@ def load_dataset(file_location: str):
         df["neck_Y"] = [0 for _ in range(df.shape[0])]
 
     # TEMP
-    labels = df["labels"].to_list()
-    # labels = [label + 1 for label in df["labels"].to_list()]
+    # labels = df["labels"].to_list()
+    labels = [label + 1 for label in df["labels"].to_list()]
     data = []
 
     for row_index, row in df.iterrows():
