@@ -109,6 +109,10 @@ def train(args):
     slrt_model.train(True)
     slrt_model.to(device)
 
+    print(slrt_model)
+    # This should print 'cuda' if it's available
+    print(device)
+
     # Construct the other modules
     cel_criterion = nn.CrossEntropyLoss()
     sgd_optimizer = optim.SGD(slrt_model.parameters(), lr=args.lr)
@@ -124,6 +128,10 @@ def train(args):
     # Training set
     transform = transforms.Compose([GaussianNoise(args.gaussian_mean, args.gaussian_std)])
     train_set = CzechSLRDataset(args.training_set_path, transform=transform, augmentations=True)
+
+    print('train set')
+    print(train_set)
+    print("LEN: ", len(train_set))
 
     # Validation set
     if args.validation_set == "from-file":
@@ -268,4 +276,8 @@ def train(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("", parents=[get_default_args()], add_help=False)
     args = parser.parse_args()
+
+    print('args')
+    print(args)
+
     train(args)

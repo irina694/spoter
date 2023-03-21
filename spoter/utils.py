@@ -9,6 +9,10 @@ def train_epoch(model, dataloader, criterion, optimizer, device, scheduler=None)
     running_loss = 0.0
 
     for i, data in enumerate(dataloader):
+        # print()
+        # print('i ', i)
+        # print('data:')
+        # print(data)
         inputs, labels = data
         inputs = inputs.squeeze(0).to(device)
         labels = labels.to(device, dtype=torch.long)
@@ -16,7 +20,19 @@ def train_epoch(model, dataloader, criterion, optimizer, device, scheduler=None)
         optimizer.zero_grad()
         outputs = model(inputs).expand(1, -1, -1)
 
+        # print('outputs[0]:', outputs[0])
+        # print('labels[0]:', labels[0])
+        # print('inputs[0] size: ', inputs[0].size())
+        # print('outputs[0] size:', outputs[0].size())
+        # print('labels[0] size:', labels[0].size())
+        #
+        # print('criterion')
+        # print(criterion)
+
         loss = criterion(outputs[0], labels[0])
+
+        # print('loss: ', loss)
+
         loss.backward()
         optimizer.step()
         running_loss += loss

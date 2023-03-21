@@ -17,6 +17,19 @@ First, make sure to install all necessary dependencies using:
 pip install -r requirements.txt
 ```
 
+Reinstall torch v1.8.1 and torchvision that support CUDA. On Windows 10, NVIDIA GeForce 1080 Ti, with CUDA 11.6.
+```commandline
+pip install --upgrade --force-reinstall torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+
+
+Place the data into the data folder.
+Then, run the following:
+```commandline
+python -m train  --training_set_path .\data\WLASL100_train_25fps.csv --validation_set_path .\data\WLASL100_val_25fps.csv --testing_set_path .\data\WLASL100_test_25fps.csv --experiment_name wlasl100 --num_classes 100      
+```
+
 To train the model, simply specify the hyperparameters and run the following:
 
 ```
