@@ -1,5 +1,6 @@
-.idea
-supplementary/
-out-checkpoints/
-__pycache__
+.idea/*
+supplementary/*
+out-checkpoints/*
+__pycache__/
 *.log
+.DS_Store
