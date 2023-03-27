@@ -4,3 +4,4 @@ out-checkpoints/*
 __pycache__/
 *.log
 .DS_Store
+data/.~lock*

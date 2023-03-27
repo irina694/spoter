@@ -12,10 +12,10 @@ def train_epoch(model, dataloader, criterion, optimizer, device, scheduler=None)
     print("LEN: ", len(dataloader))
 
     for i, data in enumerate(dataloader):
-        # print()
-        # print('i ', i)
-        # print('data:')
-        # print(data)
+        print()
+        print('i ', i)
+        print('data:')
+        print(data)
         inputs, labels = data
         inputs = inputs.squeeze(0).to(device)
         labels = labels.to(device, dtype=torch.long)
