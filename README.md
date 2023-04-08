@@ -25,12 +25,19 @@ pip install --upgrade --force-reinstall torch==1.8.1+cu111 torchvision==0.9.1+cu
 
 
 Place the data into the data folder.
-Then, run the following:
+
+To train the model on the WLASL100 dataset:
 ```commandline
 python -m train  --training_set_path .\data\WLASL100_train_25fps.csv --validation_set_path .\data\WLASL100_val_25fps.csv --testing_set_path .\data\WLASL100_test_25fps.csv --experiment_name wlasl100 --num_classes 100      
 ```
 
-To train the model, simply specify the hyperparameters and run the following:
+For example, to train the model on the WLASL2000 dataset, on a Mac (the paths may be different and are platform-dependent):
+```commandline
+python -m train  --training_set_path ./data/WLASL2000_train.csv --validation_set_path ./data/WLASL2000_val.csv --testing_set_path ./data/WLASL2000_test.csv --experiment_name wlasl2000 --num_classes 2000      
+```
+
+
+In general, to train the model, simply specify the hyperparameters and run the following:
 
 ```
 python -m train

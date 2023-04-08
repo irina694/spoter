@@ -8,8 +8,8 @@ def train_epoch(model, dataloader, criterion, optimizer, device, scheduler=None)
     pred_correct, pred_all = 0, 0
     running_loss = 0.0
 
-    print("Dataloader length")
-    print("LEN: ", len(dataloader))
+    # print("Dataloader length")
+    # print("LEN: ", len(dataloader))
 
     for i, data in enumerate(dataloader):
         # print()
@@ -54,7 +54,8 @@ def train_epoch(model, dataloader, criterion, optimizer, device, scheduler=None)
 def evaluate(model, dataloader, device, print_stats=False):
 
     pred_correct, pred_all = 0, 0
-    stats = {i: [0, 0] for i in range(101)}
+    # stats = {i: [0, 0] for i in range(101)}
+    stats = {i: [0, 0] for i in range(2001)}
 
     for i, data in enumerate(dataloader):
         inputs, labels = data
