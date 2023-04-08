@@ -1,0 +1,8 @@
+*.png
+*.gif
+*.pkl
+log.*
+Logs/*
+*.pyc
+*.txt
+.DS_Store

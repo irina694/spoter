@@ -4,3 +4,6 @@ out-checkpoints/*
 __pycache__/
 *.log
 .DS_Store
+data/*.pkl
+data/WLASL2000_*
+MediaPipe-DataExtraction-main/PoseData/neckAboveShoulder/*.zip
