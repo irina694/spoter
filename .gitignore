@@ -5,3 +5,7 @@ __pycache__/
 *.log
 .DS_Store
 data/.~lock*
+data/*.pkl
+data/WLASL2000_*
+MediaPipe-DataExtraction-main/
+WLASL2000/

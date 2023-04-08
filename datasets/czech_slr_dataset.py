@@ -18,9 +18,12 @@ def load_dataset(file_location: str):
 
     # Load the datset csv file
     df = pd.read_csv(file_location, encoding="utf-8")
+    # Load the dataset pickle file
+    # df = pd.read_pickle(file_location)
 
     # TO BE DELETED
-    df.columns = [item.replace("_left_", "_0_").replace("_right_", "_1_") for item in list(df.columns)]
+    # df.columns = [item.replace("_left_", "_0_").replace("_right_", "_1_") for item in list(df.columns)]
+    df.columns = [item.replace("_Left_", "_0_").replace("_Right_", "_1_") for item in list(df.columns)]
     if "neck_X" not in df.columns:
         df["neck_X"] = [0 for _ in range(df.shape[0])]
         df["neck_Y"] = [0 for _ in range(df.shape[0])]
